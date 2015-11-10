@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+ini_set('date.timezone', 'GMT');
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$app = new Symfony\Component\Console\Application();
+$app->addCommands([
+    new KevBaldwyn\PhpFpmMonitor\Check()
+]);
+$app->run();

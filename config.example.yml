@@ -1,0 +1,18 @@
+php:
+  restart_command: sudo service php5-fpm restart
+
+restart_handlers:
+  - KevBaldwyn\PhpFpmMonitor\FailureHandlers\PhpFpmRestart
+  #- KevBaldwyn\PhpFpmMonitor\FailureHandlers\NotifyHipChat
+
+hipchat:
+  room: your-room-id
+  api_key: your-api-key
+  # HOST_NAME will use php gethostname() to determine the machines host name
+  # replace with another value if you want to put a differnt name in here
+  from: HOST_NAME
+  # message is delivered in 2 bits: this is the first (as a notification)
+  # the second is the previous success status
+  # the machine host name will automatically get pre-prended to this in the format:
+  # [host: gethostname] - {your message in here}
+  message: php5-fpm has been automatically restarted, previous status was:
