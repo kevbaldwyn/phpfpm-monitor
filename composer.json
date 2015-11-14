@@ -1,6 +1,7 @@
 {
     "name": "kevbaldwyn/php-fpm-monitor",
     "description": "Monitor and restart php-fpm with notification",
+    "tags": ["php", "php-fpm", "utility", "cli", "restart", "monitor"],
 
     "require": {
         "php": ">=5.5",

@@ -39,6 +39,6 @@ There are 2 built in failure handlers : `KevBaldwyn\PhpFpmMonitor\FailureHandler
 
 To specify which FailureHandlers run you simply list the fully namespaced classes in the `restart_handlers` config array.
 
-You can write your own handlers by implementing `KevBaldwyn\PhpFpmMonitor\OnFailureInterface`. This receives the following method call whci contains the full config, as defined in the yaml file, and the last successful status response in json format.
+You can write your own handlers by implementing `KevBaldwyn\PhpFpmMonitor\OnFailureInterface`. This receives the following method call which contains the full config, as defined in the yaml file, and the last successful status response in json format.
 
     public function handle(array $config, $lastSuccessStatus);
