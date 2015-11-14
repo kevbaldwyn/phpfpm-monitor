@@ -3,7 +3,21 @@
 
 ini_set('date.timezone', 'GMT');
 
-require __DIR__ . '/../vendor/autoload.php';
+// Find and initialize Composer
+$files = array(
+    __DIR__ . '/../../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+    __DIR__ . '/../../../../autoload.php',
+    __DIR__ . '/../vendor/autoload.php',
+);
+
+$found = false;
+foreach ($files as $file) {
+    if (file_exists($file)) {
+        require_once $file;
+        break;
+    }
+}
 
 $app = new Symfony\Component\Console\Application();
 $app->addCommands([
