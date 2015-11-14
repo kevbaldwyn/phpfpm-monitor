@@ -23,11 +23,11 @@ Install with composer:
 ## Useage
 The package provides a binary which will be located in `vendor/bin/monitor`. Basic useage requires passing the config yaml file path to the command as the first argument. All other options are optional.
 
-    $ vendor/bin/monitor /var/www/config.yml
+    $ vendor/bin/monitor check /var/www/config.yml
 
 Passing the help `-h` flag shows all options. To set the host and port to ping php-fpm for example:
 
-    $ vendor/bin/monitor /var/www/config.yml -l http://example.com -p 80
+    $ vendor/bin/monitor check /var/www/config.yml -l http://example.com -p 80
 
 The idea is that this command is then run from cron periodically to check the state of php-fpm and will automatically restart the service if it is down.
 
