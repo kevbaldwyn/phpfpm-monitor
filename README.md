@@ -1,6 +1,8 @@
 # Php Fpm Monitor
 This package can be configured to monitor php5-fpm through its built in ping and status pages. It can then restart php5-fpm if it detects a failure and also optionally notify you of the failure with the last successful status output.
 
+It is not designed as a permanent solution more a tool to help you handle failure while the problems can be interrogated by notifying you of the state of the last success.
+
 ## Instalation
 Install as any other Laravel 4 package:
 
@@ -26,6 +28,8 @@ The package provides a binary which will be located in `vendor/bin/monitor`. Bas
 Passing the help `-h` flag shows all options. To set the host and port to ping php-fpm for example:
 
     $ vendor/bin/monitor /var/www/config.yml -l http://example.com -p 80
+
+The idea is that this command is then run from cron periodically to check the state of php-fpm and will automatically restart the service if it is down.
 
 ## Php5-Fpm status and ping pages
 This tool requires the status and ping pages to be correctly setup. More info on this can be found here: https://rtcamp.com/tutorials/php/fpm-status-page/
