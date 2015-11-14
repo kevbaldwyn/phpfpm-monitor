@@ -20,5 +20,9 @@
         "psr-4": {
             "KevBaldwyn\\PhpFpmMonitor\\":"src/"
         }
-    }
+    },
+
+    "bin" : [
+        "bin/monitor"
+    ]
 }
